@@ -11,6 +11,10 @@ use Illuminate\Validation\ValidationException;
 class AuthController extends Controller
 {
     // Đăng ký tài khoản
+    public function showRegisterForm() {
+        return view('auth.register');
+    }
+    
     public function register(Request $request)
     {
         $data = $request->validate([
@@ -36,6 +40,10 @@ class AuthController extends Controller
     }
 
     // Đăng nhập
+    public function showLoginForm() {
+        return view('auth.login');
+    }
+    
     public function login(Request $request)
     {
         $credentials = $request->validate([

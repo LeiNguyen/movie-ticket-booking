@@ -26,8 +26,8 @@
         <a href="{{ route('home') }}">Trang chủ</a>
         <a href="#">Phim đang chiếu</a>
         <a href="#">Lịch chiếu</a>
-        <a href="#">Đăng nhập</a>
-        <a href="#">Đăng ký</a>
+        <a href="{{ route('login') }}">Đăng nhập</a>
+        <a href="{{ route('register') }}">Đăng ký</a>
     </div>
 
     <!-- Header -->
