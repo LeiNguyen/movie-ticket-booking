@@ -27,7 +27,16 @@
         <a href="#">Phim đang chiếu</a>
         <a href="#">Lịch chiếu</a>
         <a href="{{ route('login') }}">Đăng nhập</a>
-        <a href="{{ route('register') }}">Đăng ký</a>
+        <a href="{{ route('register') }}">Đăng ký</a> 
+        @if ($user)
+            <p>Xin chào, {{ $user->name }}</p>
+        @else
+            <p>Chào khách!</p>
+        @endif
+        @if (session('success'))
+            <div>{{ session('success') }}</div>
+        @endif
+
     </div>
 
     <!-- Header -->

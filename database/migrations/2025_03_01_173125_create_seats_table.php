@@ -21,7 +21,7 @@ return new class extends Migration
                 $table->integer('price'); // Giá của ghế
                 $table->boolean('is_booked')->default(false); // Trạng thái ghế đã đặt hay chưa
                 $table->timestamps();
-
+                $table->engine = 'InnoDB';
                 $table->foreign('showtime_id')->references('id')->on('showtimes')->onDelete('cascade');
             });
         }

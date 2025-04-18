@@ -14,7 +14,7 @@ class AuthController extends Controller
     public function showRegisterForm() {
         return view('auth.register');
     }
-    
+
     public function register(Request $request)
     {
         $data = $request->validate([
@@ -58,11 +58,9 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
-        $token = $user->createToken('auth_token')->plainTextToken;
-
+        return redirect('/')->with('success', 'Đăng nhập thành công!');
         return response()->json([
             'message' => 'Đăng nhập thành công!',
-            'token' => $token,
             'user' => $user
         ]);
     }

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('movie_id');
             $table->dateTime('start_time')->nullable; //time chiếu phim
             $table->timestamps();
-
+            $table->engine = 'InnoDB';
+            
             $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
         });
     }
